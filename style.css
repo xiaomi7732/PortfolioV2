@@ -18,6 +18,8 @@
     --page-corner-radius: 4px;
     --paragraph-icon-size: 16px;
     --li-line-height: 24px;
+    --social-fly-in-translate-x: 20%;
+    --social-animation-length: 0.5s;
 }
 
 body {
@@ -97,6 +99,7 @@ h1 {
 h2 {
     font-size: 20px;
     margin: 0;
+    font-weight: 400;
 }
 
 h3 {
@@ -136,7 +139,6 @@ h3 {
     padding: 0;
     margin: 0;
     display: flex;
-    ;
 }
 
 .nav-bar>ul>li {
@@ -147,6 +149,7 @@ h3 {
     padding-left: 60px;
     padding-right: 60px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    animation: fadeIn 1s;
 }
 
 .nav-bar>ul>li.active {
@@ -184,12 +187,18 @@ h3 {
     align-self: center;
     margin-top: 48px;
     margin-bottom: 80px;
+    animation: fadeIn 2s;
 }
 
 .social-item {
     margin-left: var(--social-icon-margin-left);
     display: flex;
     margin-bottom: var(--section-gap);
+
+    /* Apply animation to this element */
+    -moz-animation: flyIn var(--social-animation-length) ease-out;
+    -webkit-animation: flyIn var(--social-animation-length) ease-out;
+    animation: flyIn var(--social-animation-length) ease-out;
 }
 
 .social-item>img {
@@ -207,6 +216,7 @@ h3 {
 
 .main-page-content.active {
     display: block;
+    animation: fadeIn 0.5s;
 }
 
 /* Paragraph */
@@ -222,4 +232,53 @@ h3 {
 
 .paragraph-header>h3 {
     margin-left: var(--text-to-icon-gap);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes flyIn {
+    0% {
+        -moz-transform: translateX(var(--social-fly-in-translate-x));
+    }
+
+    100% {
+        -moz-transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes flyIn {
+    0% {
+        -webkit-transform: translateX(var(--social-fly-in-translate-x));
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+@keyframes flyIn {
+    0% {
+        -moz-transform: translateX(var(--social-fly-in-translate-x));
+        /* Firefox bug fix */
+        -webkit-transform: translateX(var(--social-fly-in-translate-x));
+        /* Firefox bug fix */
+        transform: translateX(var(--social-fly-in-translate-x));
+    }
+
+    100% {
+        -moz-transform: translateX(0%);
+        /* Firefox bug fix */
+        -webkit-transform: translateX(0%);
+        /* Firefox bug fix */
+        transform: translateX(0%);
+    }
 }
