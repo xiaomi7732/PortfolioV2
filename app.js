@@ -1,14 +1,17 @@
 const pages = [
     {
         "name": "page1",
+        "index": 0,
         "path": ["/", "/index.html", "/404.html"]
     },
     {
         "name": "page2",
+        "index": 1,
         "path": ["/videos"]
     },
     {
         "name": "page3",
+        "index": 2,
         "path": ["/projects"]
     }
 ];
@@ -21,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hideAllPages();
 
-    let pageName = getPageName();
-    goToPage(pageName);
+    let page = getPageRoute();
+    goToPage(page.name);
 });
 
 window.onpopstate = (e => {
@@ -44,10 +47,11 @@ function hideAllPages() {
 
 function navigateTo(route) {
     console.log(`Invoking navigate to ${route}`);
-    let pageName = getPageName(route);
-    window.history.pushState(pageName, "", route);
-    console.log(`Navigating to page: ${pageName}`);
-    goToPage(pageName);
+    let pageObj = getPageRoute(route);
+    window.history.pushState(pageObj.name, "", route);
+    console.log(`Navigating to page: ${pageObj.name}`);
+    goToPage(pageObj.name);
+    highlightNav(pageObj.index);
 }
 
 function goToPage(pageName) {
@@ -66,7 +70,26 @@ function goToPage(pageName) {
     }
 }
 
-function getPageName(path) {
+function highlightNav(index) {
+    let navBarDiv = document.getElementById('nav-bar');
+    let ulTag = navBarDiv.getElementsByTagName('ul')[0];
+    let liArray = ulTag.getElementsByTagName('li');
+    if (!!liArray && !!liArray.length && liArray.length > 0) {
+        for (let i = 0; i < liArray.length; i++) {
+            if (i === index) {
+                liArray[i].setAttribute('class', 'active');
+            }
+            else {
+                liArray[i].setAttribute('class', null);
+            }
+        }
+    }
+    else {
+        console.error('No navigation tab?');
+    }
+}
+
+function getPageRoute(path) {
     if (!path) {
         path = window.location.pathname;
     }
@@ -85,21 +108,21 @@ function getPageName(path) {
             // Special case for root
             if (r === '/' && path === '/') {
                 console.log('Routing special: /');
-                page = p.name;
+                page = p;
             }
 
             if (r !== '/' && path.startsWith(r)) {
                 console.log(`Hit by routing. Location: ${path}, Route: ${r}`)
-                page = p.name;
+                page = p;
             }
         });
     });
 
     if (!page) {
-        page = pages[0].name;
-        console.log(`No route matched. Falls back to default: ${page}`);
+        page = pages[0];
+        console.log(`No route matched. Falls back to default: ${page.name}`);
     }
     // Haven't returned yet?
-    console.log(`Decided page name: ${page}`);
+    console.log(`Decided page name: ${page.name}`);
     return page;
 }
