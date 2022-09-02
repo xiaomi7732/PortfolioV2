@@ -172,6 +172,6 @@ h2 {
     visibility: collapse;
 }
 
-.main-page-content:active {
+.main-page-content.active {
     visibility: visible;
 }

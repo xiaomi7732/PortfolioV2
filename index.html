@@ -24,6 +24,9 @@
 
     <link rel="icon" href="./images/profile.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Javascript -->
+    <script src="./app.js" defer></script>
 </head>
 
 <body>
@@ -37,19 +40,19 @@
                 <div class="nav-bar">
                     <ul>
                         <li>
-                            <h2>What's new</h2>
+                            <h2 onclick="navigateTo('/')">What's new</h2>
                         </li>
                         <li>
-                            <h2>Video Index</h2>
+                            <h2 onclick="navigateTo('/videos')">Video Index</h2>
                         </li>
                         <li>
-                            <h2>My Projects</h2>
+                            <h2 onclick="navigateTo('/projects')">My Projects</h2>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="main-content">
-                <div id="page1" class="main-page-content:active">
+                <div id="page1" class="main-page-content active">
                     <p>
                         💪 Learn C#, get better by building projects! Keep coding, keep improving!
                     </p>
