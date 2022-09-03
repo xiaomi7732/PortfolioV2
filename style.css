@@ -251,6 +251,14 @@ h3 {
     }
 }
 
+.youtube-page-description{
+    display: flex;
+    align-items: center;
+}
+.youtube-page-description>img{
+    margin-right: var(--text-to-icon-gap);
+}
+
 /* Move it (define the animation) */
 @-moz-keyframes flyIn {
     0% {
