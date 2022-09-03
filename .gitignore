@@ -1,2 +1,7 @@
 # Excel temp file.
 ~$*.xlsx
+
+local.*.ps1
+local.*.bat
+local.*.cmd
+local.*.sh
