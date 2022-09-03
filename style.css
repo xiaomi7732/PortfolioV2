@@ -6,8 +6,9 @@
     --font-color-invert: #E6E6E6;
     --separator-color: rgba(205, 205, 205, 0.8);
     --page-margin-left: 40px;
-    --section-gap: 24px;
+    --project-preview-container-margin-left-offset: -40px;
     --page-margin-top: 48px;
+    --section-gap: 24px;
     --text-to-icon-gap: 8px;
     --header-block-height: 160px;
     --icon-width: 24px;
@@ -22,6 +23,8 @@
     --social-fly-in-translate-x: 20%;
     --social-animation-length: 0.5s;
     --tab-corner-radius: 4px;
+    --shadow-gray: #00000016;
+    --project-preview-title-height: 48px;
 }
 
 body {
@@ -245,6 +248,48 @@ h3 {
     margin-left: var(--text-to-icon-gap);
 }
 
+.project-container {
+    /* border: 1px solid blue; */
+    margin-right: 48px;
+    display: flex;
+    box-shadow: 4px 4px 16px 4px var(--shadow-gray);
+    margin-left: var(--project-preview-container-margin-left-offset);
+    margin-top: var(--section-gap);
+}
+
+.project-preview-img {
+    flex-shrink: 0;
+    box-shadow: 4px 0px 4px 0px var(--shadow-gray);
+    margin-top: 4px;
+}
+
+.project-preview-img img {
+    width: 380px;
+    height: 250px;
+}
+
+.project-introduction {
+    /* border: 1px solid green; */
+    flex-grow: 1;
+}
+
+.project-title {
+    color: var(--font-color-invert);
+    background-color: var(--bg-color-invert);
+    padding-left: var(--page-margin-left);
+    height: var(--project-preview-title-height);
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.project-content {
+    margin-left: var(--page-margin-left);
+    margin-top: var(--section-gap);
+}
+
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -255,11 +300,12 @@ h3 {
     }
 }
 
-.youtube-page-description{
+.youtube-page-description {
     display: flex;
     align-items: center;
 }
-.youtube-page-description>img{
+
+.youtube-page-description>img {
     margin-right: var(--text-to-icon-gap);
 }
 
@@ -318,6 +364,7 @@ h3 {
     0% {
         border-bottom-color: var(--bg-color);
     }
+
     100% {
         border-bottom-color: var(--separator-color);
     }
