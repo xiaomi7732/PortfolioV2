@@ -1,3 +1,5 @@
+const darkThemeCSSTagId = 'dark-theme-css';
+
 export default class ThemeControl {
 
     constructor(darkThemeCssFilePath) {
@@ -15,26 +17,47 @@ export default class ThemeControl {
         if (this.isDarkMode) {
             this.addDarkModeStyleSheet();
         }
+
+        return this.isDarkMode;
+    }
+
+    toggleTheme = () => {
+        if (this.isDarkMode) {
+            this.removeDarkThemeStyleSheet();
+            this.isDarkMode = false;
+        }
+        else {
+            this.addDarkModeStyleSheet();
+            this.isDarkMode = true;
+        }
+        return this.isDarkMode;
     }
 
     addDarkModeStyleSheet = () => {
         // Already added.
-        let id = 'dark-theme-css';
-        let darkThemeCssTag = document.getElementById(id);
+        const darkThemeCssTag = document.getElementById(darkThemeCSSTagId);
 
         if (!!darkThemeCssTag) {
-            console.log('dark theme css already exists');
+            console.log(`dark theme css with id ${darkThemeCSSTagId} already exists`);
             return;
         }
 
-        let head = document.getElementsByTagName('head')[0];
+        const head = document.getElementsByTagName('head')[0];
 
         // Creating link element
-        let style = document.createElement('link')
+        const style = document.createElement('link')
         style.href = this.darkThemeCssFilePath;
         style.type = 'text/css';
         style.rel = 'stylesheet';
-        style.id = id;
+        style.id = darkThemeCSSTagId;
         head.append(style);
     };
+
+    removeDarkThemeStyleSheet() {
+        const darkThemeCssTag = document.getElementById(darkThemeCSSTagId);
+        if (!!darkThemeCssTag) {
+            console.log('dark theme css exists');
+            darkThemeCssTag.remove();
+        }
+    }
 }
