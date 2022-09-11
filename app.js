@@ -1,3 +1,5 @@
+import ThemeControl from "./theme-control.js";
+
 const pages = [
     {
         "name": "page1",
@@ -21,6 +23,9 @@ const hiddenPageClass = 'main-page-content';
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('doc is ready. Start the script!');
+
+    let themeControl = new ThemeControl('./style.dark.css');
+    themeControl.initialize();
 
     hideAllPages();
 
