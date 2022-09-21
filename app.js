@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setupThemeButtonVisibility(isDarkMode);
     });
 
-    let page = getPageRoute();
-    goToPage(page.name);
+    const page = getPageRoute();
+    navigateTo(page.path[0]);
 });
 
 window.onpopstate = (e => {
