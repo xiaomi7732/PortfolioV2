@@ -15,6 +15,11 @@ const pages = [
         "name": "page3",
         "index": 2,
         "path": ["/projects"]
+    },
+    {
+        "name": "page4",
+        "index": 3,
+        "path": ["/gists"]
     }
 ];
 
