@@ -379,7 +379,7 @@ h3 {
     }
 
     100% {
-        border-bottom-color: var(--font-color);
+        border-bottom-color: var(--accent);
     }
 }
 
