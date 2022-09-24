@@ -244,6 +244,11 @@ h3 {
     justify-items: baseline;
 }
 
+.side-bar-footer{
+    margin-top: var(--page-margin-top);
+    margin-left: var(--page-margin-left);
+}
+
 .main-page-content {
     display: none;
 }
