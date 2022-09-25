@@ -219,7 +219,8 @@ h3 {
 
 /* Profile Photo */
 #profile-pic {
-    align-self: center;
+    display: flex;
+    justify-content: center;
     margin-top: 48px;
     margin-bottom: 80px;
     animation: fadeIn 2s;
