@@ -225,8 +225,19 @@ h3 {
     animation: fadeIn 2s;
 }
 
+
+#social-item-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#social-item-container>.social-item-column
+{
+    flex-grow: 1;
+}
+
 .social-item {
-    margin-left: var(--social-icon-margin-left);
     display: flex;
     margin-bottom: var(--section-gap);
 
