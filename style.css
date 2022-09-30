@@ -269,14 +269,16 @@ h3 {
     animation: flyIn var(--social-animation-length) ease-out;
 }
 
-.social-item-icon
-{
-    width: 24px;
-    height: 20px;
+.background-icon {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     margin: 0;
+}
+
+.social-item-icon {
+    width: 24px;
+    height: 20px;
 }
 
 .social-item-youtube {
@@ -325,7 +327,7 @@ h3 {
 /* Paragraph */
 .paragraph-header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     margin-top: var(--section-gap);
 }
 
@@ -402,8 +404,25 @@ h3 {
     align-items: center;
 }
 
-.youtube-page-description>img {
+.new-videos-icon{
+    width: 20px;
+    height: 20px;
     margin-right: var(--text-to-icon-gap);
+    background-image: url(./images/icon-new-videos.svg);
+}
+
+.announcements-icon{
+    width: 16px;
+    height: 16px;
+    margin-right: var(--text-to-icon-gap);
+    background-image: url(./images/icon-announcements.svg);
+}
+
+.youtube-icon {
+    width: 24px;
+    height: 20px;
+    margin-right: var(--text-to-icon-gap);
+    background-image: url(./images/icon-youtube.svg);
 }
 
 /* Move it (define the animation) */
