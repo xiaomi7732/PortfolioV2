@@ -244,6 +244,8 @@ h3 {
     justify-content: center;
     margin-top: 48px;
     margin-bottom: 80px;
+    width: 128px;
+    height: 128px;
     animation: fadeIn 2s;
 }
 
@@ -267,11 +269,38 @@ h3 {
     animation: flyIn var(--social-animation-length) ease-out;
 }
 
+.social-item-icon
+{
+    width: 24px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+}
+
+.social-item-youtube {
+    background-image: url(./images/social-youtube-icon.svg);
+}
+
+.social-item-twitter {
+    background-image: url(./images/social-twitter-icon.svg);
+}
+
+.social-item-github {
+    background-image: url(./images/social-github-icon.png);
+}
+
+.social-item-discord {
+    background-image: url(./images/social-discord-icon.svg);
+}
+
+
 .social-item>img {
     width: var(--icon-width);
 }
 
-.social-item>div {
+.social-item-text {
     margin-left: var(--text-to-icon-gap);
     justify-items: baseline;
 }
@@ -325,7 +354,7 @@ h3 {
 
 .project-preview-img img {
     width: 380px;
-    height: 250px;
+    height: 285px;
     flex-shrink: 1;
 }
 
@@ -354,6 +383,9 @@ h3 {
     margin-top: var(--section-gap);
 }
 
+.project-content>div {
+    line-height: var(--li-line-height);
+}
 
 @keyframes fadeIn {
     0% {
@@ -552,8 +584,8 @@ h3 {
     }
 
     .project-preview-img img {
-        max-width: 250px;
-        height: 180px;
+        max-width: 260px;
+        height: 195px;
     }
 
     .project-introduction {
