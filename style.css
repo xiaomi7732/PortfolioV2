@@ -225,8 +225,9 @@ h3 {
 /* Sidebar header */
 #side-bar-header {
     display: flex;
-    margin-top: var(--page-margin-top);
+    margin-top: var(--section-gap);
     margin-left: var(--page-margin-left);
+    margin-bottom: var(--section-gap);
 }
 
 #side-bar-header>img {
@@ -240,10 +241,7 @@ h3 {
 
 /* My Twitter */
 .my-twitter {
-    margin-top: 32px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 32px;
+    margin: 24px;
 }
 
 /* YouTube Thumbnail */
@@ -654,6 +652,12 @@ h3 {
         flex-direction: column;
         align-self: stretch;
         border-top-right-radius: 0;
+    }
+
+    /* My Twitter */
+    .my-twitter {
+        margin: 16px 0px;
+        margin-top: 0px;
     }
 
     .social-item {
