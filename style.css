@@ -317,6 +317,9 @@ h3 {
     background-image: url(./images/social-discord-icon.svg);
 }
 
+.social-item-bluesky {
+    background-image: url(./images/social-bluesky-icon.svg);
+}
 
 .social-item>img {
     width: var(--icon-width);
