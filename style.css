@@ -240,9 +240,9 @@ h3 {
 }
 
 /* My Twitter */
-.my-twitter {
+.my-social {
     margin: 24px;
-    text-align: center;
+    text-align: left;
 }
 
 /* YouTube Thumbnail */
@@ -663,7 +663,7 @@ h3 {
     }
 
     /* My Twitter */
-    .my-twitter {
+    .my-social {
         margin: 16px 0px;
         margin-top: 0px;
     }
